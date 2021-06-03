@@ -1,0 +1,18 @@
+---
+layout: post
+title: "[JAVA] Boj 2023 | 신기한 소수"
+image: boj2023.png
+date: 2021-03-09
+tags: [boj]
+categories: algorithm
+---
+
+# 문제
+- <a href="https://www.acmicpc.net/problem/2023" target="_black" >[Boj 2023 - 신기한 소수]</a>
+- 해결방법 : 재귀와 소수문제가 결합되어 있다. StringBuilder를 이용해서 계속 숫자가 쌓이게 만들었다 소수 검사는 Math.sqrt를 이용했는데 에라토스테네스의 체도 생각하고 있자
+
+- - -
+
+# 나의 풀이
+
+<script src="https://gist.github.com/Jisu-Shin/e1244a6a5be5726693191c2829683586.js"></script>

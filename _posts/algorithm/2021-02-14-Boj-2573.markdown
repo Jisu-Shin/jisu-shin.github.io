@@ -1,0 +1,18 @@
+---
+layout: post
+title: "[JAVA] Boj_2573 | 빙산"
+image: boj2564.png
+date: 2021-02-12
+tags: [boj]
+categories: algorithm
+---
+
+# 문제
+- <a href="https://www.acmicpc.net/problem/2573" target="_black" >[Boj 2573 - 빙산]</a>
+- 해결방법 : 4방향, dfs문제였다 포인트는 임시배열을 만들어서 거기다가 값을 저장해야하는 것이다 왜냐하면 원본에다가 값을 바로 넣어버리면 다음 연산시 영향을 주기 때문이다 그것만 주의한다면 쉽게 풀 수 있는 문제이다 
+
+- - -
+
+# 나의 풀이
+
+<script src="https://gist.github.com/Jisu-Shin/0a861e23831c98f83eaabbea9cb19eed.js"></script>

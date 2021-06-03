@@ -1,0 +1,18 @@
+---
+layout: post
+title: "[JAVA] Boj_11497 | 통나무 건너뛰기"
+image: boj11497.png
+date: 2021-02-25
+tags: [boj]
+categories: algorithm
+---
+
+# 문제
+- [Boj 11497 - 통나무 건너뛰기 ](https://www.acmicpc.net/problem/11497)
+- 해결방법 : 배열 정렬을 하고 인덱스를 잘 배치하여 넣어준다면 쉽고 빠르게 풀 수 있는 문제이다
+
+- - -
+
+# 나의 풀이
+
+<script src="https://gist.github.com/Jisu-Shin/d3e943028adcf555a1f0530c588e523d.js"></script>

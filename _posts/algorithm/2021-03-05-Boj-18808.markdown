@@ -1,0 +1,18 @@
+---
+layout: post
+title: "[JAVA] Boj_18808 | 스티커 붙이기"
+image: boj18808.png
+date: 2021-03-05
+tags: [boj]
+categories: algorithm
+---
+
+# 문제
+- <a href="https://www.acmicpc.net/problem/18808" target="_black" >[Boj 18808- 스티커 붙이기]</a>
+- 해결방법 : 구현문제 ! 메소드를 잘 분리해서 작성해야하는게 핵심이다 . 90도씩 스티커가 돌아가는 경우, 스티커의 정보변경(행,열 ), 스티커를 넣을 자리에 이미 스티커가 있는 경우... 세세한 조건까지 넣어주면 풀 수 있다. 구현이라 코드가 길게 나오지만 크게 어려운 점은 없다 왜냐면 왼쪽에서부터 채워주면 된다고 문제에 적혀있었기 때문이다 
+
+- - -
+
+# 나의 풀이
+
+<script src="https://gist.github.com/Jisu-Shin/8d8d61f5cfe03660c575ef8f61db67fe.js"></script>

@@ -1,0 +1,18 @@
+---
+layout: post
+title: "[JAVA] Boj_12927 | 배수 스위치"
+image: boj12927.png
+date: 2021-02-26
+tags: [boj]
+categories: algorithm
+---
+
+# 문제
+- <a href="https://www.acmicpc.net/problem/12927" target="_black" >[Boj 12927- 배수 스위치]</a>
+- 해결방법 : 배열의 index를 활용해서 for문을 잘 사용한다면 어려운 문제가 아니다 **쉽게 접근하자**
+
+- - -
+
+# 나의 풀이
+
+<script src="https://gist.github.com/Jisu-Shin/754ff07082f8c8163321db01746dc2c1.js"></script>

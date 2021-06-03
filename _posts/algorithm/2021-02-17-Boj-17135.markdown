@@ -1,0 +1,18 @@
+---
+layout: post
+title: "[JAVA] Boj_17135 | 캐슬 디펜스"
+image: boj17135.png
+date: 2021-02-17
+tags: [boj]
+categories: algorithm
+---
+
+# 문제
+- <a href="https://www.acmicpc.net/problem/17135" target="_black" >[Boj 17135- 캐슬 디펜스 ]</a>
+- 해결방법 : 다시 풀어봐야함, 수업시간에 교수님 코드 따라 침
+
+- - -
+
+# 나의 풀이
+
+<script src="https://gist.github.com/Jisu-Shin/754ff07082f8c8163321db01746dc2c1.js"></script>

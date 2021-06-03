@@ -1,0 +1,125 @@
+I"�<h2 id="가상메모리">가상메모리</h2>
+
+<ul>
+  <li>가상메모리 : 실행중인 프로세스가 가상의 공간을 참조하여 마치 커다란 물리 메모리를 갖고 있는 것처럼 사용할 수 있도록 하는 것이다</li>
+  <li>
+    <p>프로세스가 실제 필요로 하는 부분만 메모리로 올린다 (<code class="language-plaintext highlighter-rouge">Demand-Paging : 요구페이징</code> )</p>
+
+    <ul>
+      <li>크롬, 이클립스, vs code의 프로그램을 실행시켰다 그중 각각 사용하고 있는 기능만 올린다</li>
+    </ul>
+  </li>
+  <li>프로세스의 모든 데이터를 메모리로 적재하지 않고 , 실행 중에 필요한 시점에서만 메모리로 적재함</li>
+  <li>실제 메모리는 연속적이지 않는데 CPU는 연속적으로 사용하고 있다는 것을 보장받으며 정상적으로 수행한다</li>
+  <li>RAM의 부족한 용량을 보완하기 위해 사용된다
+    <ul>
+      <li>RAM : CPU가 처리할 데이터가 임시로 저장되는 곳</li>
+      <li>모래(데이터), 포크레인(램)일 경우 // 구덩이(크롬,이클립스…) 에 모래를 넣기 위해 포크레인이 모래를 담고 이동</li>
+      <li>RAM이 크다고 항상 좋은건 아니다 =&gt; 개인이 어떻게 사용하느냐에 따라 적당한 크기의 RAM이 좋다
+        <ul>
+          <li>1톤 포크레인이면 충분한데 15톤의 포크레인을 사용한다면 비효율적</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="https://images.velog.io/images/gndan4/post/42efe298-c182-4866-b5e7-7b27d642b90f/image.png" width="80%" /></p>
+
+<ul>
+  <li>MMU (Memory Management Unit) 에 의해서 물리 주소로 변환된다.</li>
+  <li>intel x8086 ( <code class="language-plaintext highlighter-rouge">인텔사에서 1978년에 제작한 개인용 컴퓨터를 위한 16비트 마이크로프로세서 </code>)에서는 세그먼테이션과 페이징 기법을 함께 사용한다</li>
+  <li>
+    <p><a href="https://semtax.tistory.com/66">인텔 메모리 관리기법분석 </a></p>
+  </li>
+  <li>참고사항
+    <ul>
+      <li>프레임 : 물리적 메모리를 고정크기의 블럭들로 나눈 것</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="페이징">페이징</h2>
+
+<ul>
+  <li>
+    <p>크기가 고정된 영역인 페이지라고 불리는 블록들로 분할하고 메모리를 할당한다</p>
+  </li>
+  <li>
+    <p>(단점) : 페이지 크기가 클수록 내부 단편화가 높음</p>
+
+    <ul>
+      <li>프로세스 크기가 페이지 크기의 배수가 아닐 경우 메모리 공간을 낭비한다</li>
+      <li>빈 공간은 자기 자신도 쓰지 않으며 다른 프로세스에서도 쓰지 못하기 때문이다</li>
+      <li>
+        <p>내부 단편화의 해결 방법은 없으나 외부 단편화에 비해 낭비되는 메모리 공간은 매우 적다</p>
+      </li>
+      <li>페이지 크기가 작아진다면 페이지 수가 늘어나고 페이지 테이블의 크기가 늘어나 유지비용이 많이 든다</li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbcWBuK%2FbtquS9IGzkq%2FbetCj8R8f7gULsxnkEaiMK%2Fimg.png" /></p>
+
+<ul>
+  <li>프로세스의 PCB(Process Control Block)에 Page Table 구조체를 가리키는 주소가 있다</li>
+  <li>페이지 테이블 : 한 프로세스의 각 페이지에 해당하는 프레임의 위치를 관리한다</li>
+  <li>하나의 프로세스당 하나의 페이지 테이블을 갖는다</li>
+</ul>
+
+<p><img src="https://mblogthumb-phinf.pstatic.net/MjAxODA5MjlfMjA5/MDAxNTM4MTk4NzQzODU4.BhYNMoxkTEyyNacqAJHcrmOYbZoGmolwPmbGMenx8nUg.tsuK4yqwP12HF9ZvhYfMvZLNAcIkkA5crKkuUBpJ0uUg.PNG.qbxlvnf11/20180920_174830.png?type=w800" height="70%" /></p>
+
+<ul>
+  <li>페이지 테이블에는 RAM에 적재되어있는 페이지 번호와 해당 페이지가 위치한 메모리 프레임의 시작 주소가 있다</li>
+  <li>페이지테이블을 메모리 내부에 만들 경우
+    <ul>
+      <li>(장점) : 페이지 테이블의 크기에 제한이 없다</li>
+      <li>(단점) 페이지테이블 한번, 실제 주소 한번, 메모리에 총 2번 접근해야하므로 주소 변환 속도가 느리다</li>
+    </ul>
+  </li>
+  <li>페이지테이블을 CPU 내부에 만들 경우
+    <ul>
+      <li>(장점) : 주소 변환 속도가 빠르다</li>
+      <li>(단점) : 페이지 테이블의 크기가 매우 제한된다</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="페이지-폴트">페이지 폴트</h2>
+
+<hr />
+
+<h2 id="세그멘테이션">세그멘테이션</h2>
+
+<ul>
+  <li>가변적인 영역인 세그먼트로 분할하고 메모리를 할당한다</li>
+  <li>강점
+    <ul>
+      <li>내부 단편화가 없다</li>
+    </ul>
+  </li>
+  <li>약점
+    <ul>
+      <li>세그먼트 크기가 클수록 외부 단편화 큼:
+        <ul>
+          <li>물리 메모리가 원하는 연속된 크기의 메모리를 제공해주지 못하는 경우</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="https://user-images.githubusercontent.com/34755287/57119448-47043400-6da5-11e9-95da-91cb808de992.png" /></p>
+
+<ul>
+  <li>세그먼트 테이블에는 세그먼트 번호와 시작 주소(base), 세그먼트 크기(limit)로 이루어져있다</li>
+  <li>해당 세그먼트의 크기를 넘어서는 주소가 들어오면 인터럽트가 발생해서 해당 프로세스를 강제로 종료시킨다</li>
+</ul>
+
+<hr />
+
+:ET

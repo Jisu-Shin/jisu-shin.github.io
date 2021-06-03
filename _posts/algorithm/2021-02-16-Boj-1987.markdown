@@ -1,0 +1,18 @@
+---
+layout: post
+title: "[JAVA] Boj_1987 | 알파벳"
+image: boj1987.png
+date: 2021-02-16 
+tags: [boj]
+categories: algorithm
+---
+
+# 문제
+- [Boj 1987 - 알파벳 ](https://www.acmicpc.net/problem/1987)
+- 해결방법 : DFS 방식인데 백트래킹 방식도 섞여있다 돌아가면서 false를 해주는게 포인트 근데 for문에 넣으면 안됨!!!
+
+---
+
+# 나의 풀이
+
+<script src="https://gist.github.com/Jisu-Shin/63433fac054c31658cfe997bc1c25e3a.js"></script>

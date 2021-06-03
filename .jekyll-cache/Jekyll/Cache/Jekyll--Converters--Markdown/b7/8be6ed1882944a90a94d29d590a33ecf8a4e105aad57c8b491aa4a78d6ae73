@@ -1,0 +1,53 @@
+I"7<h3 id="join">JOIN</h3>
+
+<ul>
+  <li>둘 이상의 테이블에서 데이터가 필요한 경우 테이블 조인 필요</li>
+  <li>
+    <p>db 열고 닫고 하는데 시간이 오래걸림</p>
+  </li>
+  <li>inner join
+    <ul>
+      <li>동등조인이라고도 하며 N개의 테이블을 조인할 시 조인조건은 N-1개가 있어야한다</li>
+      <li>on을 사용해서 join조건을, where을 사용해서 일반조건을 구분한다</li>
+      <li>using을 사용할 때는 공통컬럼으로 작성해야한다</li>
+    </ul>
+  </li>
+  <li>natural join
+    <ul>
+      <li>공통컬럼이 여러개일경우 다 조인을 하므로 주의를 해야한다</li>
+    </ul>
+  </li>
+  <li>outer join
+    <ul>
+      <li>모든의 조건이 어느 위치에 있는지 확인해본다</li>
+      <li>left, right , full</li>
+    </ul>
+  </li>
+  <li>non-equi join
+    <ul>
+      <li>= 으로 join을 안하고 부등호 or between 으로 비교를 한다</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="subquery">SUBQUERY</h3>
+
+<ul>
+  <li>다른 쿼리 내부에 포함되어 있는 select 문을 의미한다</li>
+  <li>서브쿼리는 비교 연산자의 오른쪽에 기술해야하고 반드시 괄호 ( ) 로 감싸져 있어야 한다</li>
+  <li>서브쿼리는 order by 를 사용하지 못한다</li>
+  <li>sub query 위치에 따라
+    <ul>
+      <li>스칼라 서브 쿼리 : select</li>
+      <li>인라인 뷰 : from</li>
+      <li>Nested Query : where</li>
+    </ul>
+  </li>
+  <li>limit 10,5
+    <ul>
+      <li>10 이후부터 (=11) 5개를 얻어와라</li>
+    </ul>
+  </li>
+</ul>
+
+:ET

@@ -1,0 +1,18 @@
+---
+layout: post
+title: "[JAVA] Boj_17276 | 배열 돌리기"
+image: boj17276.png
+date: 2021-02-11
+tags: [boj]
+categories: algorithm
+---
+
+# 문제
+- <a href="https://www.acmicpc.net/problem/17276" target="_black" >[Boj 17276- 배열 돌리기]</a>
+- 해결방법 : jump 간격만큼 배열 원소 값을 회전시키는게 중요한 문제이다 , 16926번 문제를 풀어서 비교적 쉽게 풀 수 있었던 문제 . 여기서는 jump만 주의한다면 반시계방향, 시계방향 으로 회전하는 코드는 쉽게 짤 수 있다 
+
+- - -
+
+# 나의 풀이
+
+<script src="https://gist.github.com/Jisu-Shin/b2caf99d95c4abde3bdc0a79fbe117f4.js"></script>

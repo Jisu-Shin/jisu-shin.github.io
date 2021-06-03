@@ -1,0 +1,13 @@
+I"N<h1 id="문제">문제</h1>
+<ul>
+  <li><a href="https://www.acmicpc.net/problem/14620" target="_black">[Boj 14620 - 꽃길]</a></li>
+  <li>해결방법 : 재귀와 조합문제이다 어떻게 저렇게 생각해냈지 ㅋㅋㅋㅋ 아마 저시기에는 파라미터로 배열 값을 초기화시키는 ? 재할당하는 ? 코드를 배워서 써먹었을 것이다 (i,j,true) , (i,j,false) 잊지말고 나중에도 잘 써먹자</li>
+</ul>
+
+<hr />
+
+<h1 id="나의-풀이">나의 풀이</h1>
+
+<script src="https://gist.github.com/Jisu-Shin/e46ba9e4135f0d6d8aa42647e038a86d.js"></script>
+
+:ET

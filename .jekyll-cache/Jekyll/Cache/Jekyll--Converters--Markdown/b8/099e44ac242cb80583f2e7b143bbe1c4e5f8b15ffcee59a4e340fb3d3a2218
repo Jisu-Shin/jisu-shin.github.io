@@ -1,0 +1,6 @@
+I"2<h1 id="문제">문제</h1>
+<ul>
+  <li><a href="https://www.acmicpc.net/problem/2563">Boj 2563 - 색종이 </a></li>
+  <li>해결방법 : 구현하는 문제 너무 쉬웠다 boolean 2차원 배열과 , 색을 칠할 배열 범위를 2중 for문으로 잘 준다면 쉽게 풀 수 있는 문제</li>
+</ul>
+:ET

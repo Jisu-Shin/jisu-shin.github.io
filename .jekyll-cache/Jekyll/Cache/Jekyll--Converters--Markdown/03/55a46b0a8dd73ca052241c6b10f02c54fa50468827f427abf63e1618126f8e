@@ -1,0 +1,6 @@
+I"2<h1 id="문제">문제</h1>
+<ul>
+  <li><a href="https://www.acmicpc.net/problem/1158">Boj 1158 - 요세푸스 문제 </a></li>
+  <li>해결방법 : Queue 자료구조를 사용하면 빨리 풀 수 있는 문제 , cnt변수로 카운팅해주고 k번째 일 때 초기화를 꼭 해줘야한다</li>
+</ul>
+:ET

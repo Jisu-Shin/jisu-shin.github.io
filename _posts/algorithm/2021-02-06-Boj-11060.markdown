@@ -1,0 +1,19 @@
+---
+layout: post
+title: "[JAVA] Boj_11060 | 점프 점프"
+image: boj11060.png
+date: 2021-02-06
+tags: [boj]
+categories: algorithm
+---
+
+# 문제
+- <a href="https://www.acmicpc.net/problem/11060" target="_black" >[Boj 11060 - 점프점프]</a>
+- 해결방법 : for문을 써서 점프할 수 있는 부분을 다 보는게 포인트 !! 그리고 제일 중요한 점이 dp[i]==0인경우 그 부분은 오지 못한다는 거니까 continue를 꼭 해줘야한다 이런 제약조건들을 생각해내는게 포인트... dp는 어려워 ~
+
+
+- - -
+
+# 나의 풀이
+
+<script src="https://gist.github.com/Jisu-Shin/4da4a394006b3f36af8b1c819162a7eb.js"></script>

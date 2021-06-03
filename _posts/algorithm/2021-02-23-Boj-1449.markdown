@@ -1,0 +1,19 @@
+---
+layout: post
+title: "[JAVA] Boj_1449 | 수리공 항승"
+image: boj1449.png
+date: 2021-02-23
+tags: [boj]
+categories: algorithm
+---
+
+# 문제
+- [Boj 2449 - 수리공 항승 ](https://www.acmicpc.net/problem/1449)
+- 해결방법 : 그리디 문제 , 교실 방배정? 문제와 비슷한 유형이다 정렬하고 끝과 시작에다가 값을 0.5처리 해주면 된다
+
+
+- - -
+
+# 나의 풀이
+
+<script src="https://gist.github.com/Jisu-Shin/9230cbbbf4d55f526caccda76650df07.js"></script>

@@ -1,0 +1,84 @@
+I"t	<h1 id="mvc-design-pattern">MVC Design pattern</h1>
+
+<ul>
+  <li>Model : Business Logic / Data  (Java)</li>
+  <li>View : GUI / Design / Presentation (JSP)</li>
+  <li>Controller : View - Model 사이의 상호동작 관리 (Servlet)</li>
+</ul>
+
+<p>M &lt;- C -&gt; V</p>
+
+<ol>
+  <li>컨트롤러가 먼저 요청, 작업을 받는다 (HTTP Request)</li>
+  <li>컨트롤러가 모델(DB작업..등등등…)을 부른다
+    <ul>
+      <li>실행할 때 필요한 parameter로 보낸다</li>
+    </ul>
+  </li>
+  <li>모델이 작업한 결과를 컨트롤러가 받는다</li>
+  <li>컨트롤러가 모델이 작업한 결과를 뷰한테 전달한다</li>
+  <li>뷰가 화면을 만든걸 (GUI Content) 컨트롤러한테 보내주고</li>
+  <li>컨트롤러가 브라우저한테 보내준다 (Http Response)</li>
+</ol>
+
+<p>browser = client</p>
+
+<hr />
+
+<table>
+  <thead>
+    <tr>
+      <th>Client</th>
+      <th>Controller</th>
+      <th> </th>
+      <th>③ Service</th>
+      <th>④ DAO</th>
+      <th>DB</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td> </td>
+      <td>① Front Controller</td>
+      <td>② controller</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>1. client로 부터 들어오는 요청 받기<br />2. 요청구분 -&gt; controller에게 전달</td>
+      <td>F.C로 부터 요청을 받아 처리</td>
+      <td>DAO의 여러작업을 묶어서 수행가능 <br />트랜잭션처리 같은거..?<br /> 출금+입금+계좌확인</td>
+      <td>client 요청에 대한 일제 처리 (DB)<br />DB에 대한 단위 작업만 수행 <br />한 메소드에서 한개만 (출금//입금//계좌확인)</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td>controller로부터 요청 받아서 처리</td>
+      <td>[CRUD] <br /> [isert, select, update,delete]</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>⑤ JSP(View)<br />결과를 같이 jsp한테 준다 <br /></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<p>기능별로 나눈거 음식점처럼</p>
+
+<p>가게에서 손님 받는 사람 / 홀에서 받는 사람 /</p>
+
+<p>FC는 client한테 요청을 계속 받을 수 있다</p>
+
+<p>부담이 덜해진다 , 오버헤드를 낮춘다</p>
+
+<p>C는 전달 받은 것만 처리한다</p>
+:ET

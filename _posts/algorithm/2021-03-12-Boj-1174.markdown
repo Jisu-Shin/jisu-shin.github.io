@@ -1,0 +1,19 @@
+---
+layout: post
+title: "[JAVA] Boj 1174 | 줄어드는 숫자"
+image: boj1174.png
+date: 2021-03-12
+tags: [boj]
+categories: algorithm
+---
+
+# 문제
+- <a href="https://www.acmicpc.net/problem/1174" target="_black" >[Boj 1174- 줄어드는 숫자]</a>
+- 해결방법 : bfs와 작은 숫자인 경우만 stringbuilder에 넣으면서 푼 문제! 쉬웠다 근데 끝 조건을 파악 못해 시간이 걸렸다...ㅎㅎ 숫자의 가장 끝이 9876543210이라는 걸 뒤늦게 알아차려서 왜 대체 안되지 이러면서 시간을 허비했었다 
+
+
+
+
+# 나의 풀이
+
+<script src="https://gist.github.com/Jisu-Shin/b78f7f9a702c5625462b7406df53f00d.js"></script>

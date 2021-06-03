@@ -1,0 +1,223 @@
+I"�<h1 id="rdbms">RDBMS</h1>
+
+<ul>
+  <li>관계형 데이터베이스 시스템</li>
+</ul>
+
+<h1 id="sql">SQL</h1>
+
+<ul>
+  <li>열의 대소문자는 구분하지 않음</li>
+  <li>하지만 <strong>데이터</strong>의 대소문자는 구분</li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">DCL (Data Control Language)</th>
+      <th style="text-align: center">DDL (Data Definition Language)</th>
+      <th style="text-align: center">DML (Data Manipulation Language)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">grant</td>
+      <td style="text-align: center">create</td>
+      <td style="text-align: center">insert (C)</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">revoke</td>
+      <td style="text-align: center">alter</td>
+      <td style="text-align: center">select (R)</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center">drop</td>
+      <td style="text-align: center">update (U)</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center">rename</td>
+      <td style="text-align: center">delete(D)</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center"><a href="#transaction">[TCL]</a> commit</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center"><a href="#transaction">[TCL]</a> rollback</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="ddl">DDL</h3>
+
+<figure class="highlight"><pre><code class="language-markdown" data-lang="markdown">create database 데이터베이스명
+default character set 값 collate 값; 
+
+create table 테이블이름 (
+    열이름 type [option attributes],
+    열이름2 type ,
+    .
+    .
+);
+
+alter database 데이터베이스명
+default character set 값 collate 값; 
+
+drop database 데이터베이스명;
+
+use 데이터베이스명;</code></pre></figure>
+
+<ul>
+  <li>
+    <p>Character set은 각 문자가 컴퓨터에 저장될 때 어떠한 ‘코드’로 저장될지에 대한 규칙의 집합을 의미한다</p>
+
+    <ul>
+      <li>utf8mb3 : 다국어 처리</li>
+      <li>utf8mb4 : 이모지 문자까지 처리</li>
+    </ul>
+  </li>
+  <li>
+    <p>Collate은 특정 문자 셋에 의해 데이터베이스에 저장된 값들을 비교 검색하거나 정렬 등의 작업을 위해 문자들을 서로 ‘ 비교 ‘ 할 때 사용하는 규칙들의 집합을 의미한다</p>
+  </li>
+  <li>
+    <p>option attributes</p>
+    <ul>
+      <li>not null</li>
+      <li>default 값</li>
+      <li>unsigned</li>
+      <li>auto increment : 새 레코드가 추가 될 때마다 값을 자동으로 1 추가시킴</li>
+      <li>primary key</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h3 id="dml">DML</h3>
+
+<figure class="highlight"><pre><code class="language-markdown" data-lang="markdown">insert into 테이블명
+values (열데이터1, 열데이터2, 열데이터3, 열데이터4);
+
+insert into 테이블명 (열이름1, 열이름2)
+values (열데이터1, 열데이터2);
+
+update 테이블명
+set 열1 = 열데이터1 , 열2 = 열데이터2
+where 조건;
+
+delete from 테이블명
+where 조건;
+
+select <span class="err">*</span> | { ALL | DISTINCT } 열
+from 테이블명;</code></pre></figure>
+
+<ul>
+  <li>insert할 때 생략이 가능한 field
+    <ol>
+      <li>null이 허용된 열</li>
+      <li>default가 설정된 열</li>
+      <li>auto increment가 설정된 열</li>
+    </ol>
+  </li>
+  <li>
+    <p>update or delete 시 where절을 생략하면 모든 데이터가 바뀌거나 or 삭제된다</p>
+  </li>
+  <li>select 절 함수
+    <ul>
+      <li>ifnull(열이름,0)</li>
+      <li>case when 열이름 &gt; 조건 then ‘고액’
+     when 열이름 &gt; 조건 then ‘평균’
+     else ‘저액’
+end ‘연봉등급’</li>
+    </ul>
+  </li>
+  <li>
+    <p>Function(내장함수)</p>
+
+    <ul>
+      <li>NOW() , SYSDATE() , CURRENT_TIMESTAMP : 현재 날짜와 시간 리턴</li>
+    </ul>
+
+    <table>
+      <thead>
+        <tr>
+          <th>format | Description</th>
+          <th>format | Description</th>
+          <th>format | Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>%Y | 2020</td>
+          <td>%a | Sun, .. , Sat</td>
+          <td>%k  <code class="language-plaintext highlighter-rouge">(시간)</code>| 0,1,2, … , 22, 23</td>
+        </tr>
+        <tr>
+          <td>%y | 20</td>
+          <td>%W | Sunday, … , Saturday</td>
+          <td>%l <code class="language-plaintext highlighter-rouge">(시간)</code> | 0,1, … , 11,12</td>
+        </tr>
+        <tr>
+          <td>%b | Jan, … , Dec</td>
+          <td>%w | 0,1, .. ,6</td>
+          <td>%i <code class="language-plaintext highlighter-rouge">(분)</code>  | 00 … 59</td>
+        </tr>
+        <tr>
+          <td>%M | January, … , December</td>
+          <td>%p | AM or PM</td>
+          <td>%S <code class="language-plaintext highlighter-rouge">(초)</code> | 00 … 59</td>
+        </tr>
+        <tr>
+          <td>%m | 01,02 … , 12</td>
+          <td>%H <code class="language-plaintext highlighter-rouge">(시간)</code> | 01,02 … , 22,23</td>
+          <td>%s <code class="language-plaintext highlighter-rouge">(초)</code> | 00 …59</td>
+        </tr>
+        <tr>
+          <td>%d | 01, 02 … , 30 , 31</td>
+          <td>%h <code class="language-plaintext highlighter-rouge">(시간)</code> | 01,02, … , 11,12</td>
+          <td>%T <code class="language-plaintext highlighter-rouge">(시간, 24시간)</code> | hh:mm:ss</td>
+        </tr>
+        <tr>
+          <td>%e | 0, 1, 2, … , 30, 31</td>
+          <td>%I <code class="language-plaintext highlighter-rouge">(시간)</code> | 01,02, … , 11,12</td>
+          <td>%j <code class="language-plaintext highlighter-rouge">(1년중 x일)</code> | 001 , … , 365</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <ul>
+      <li>if (논리식, 값1, 값2)</li>
+      <li>ifnull (값1, 값2)
+        <ul>
+          <li>값1 = null 이면 값2</li>
+          <li>null이 아니면 값1</li>
+        </ul>
+      </li>
+      <li>nullif (값1, 값2) :
+        <ul>
+          <li>값1 = 값2 이 true 이면 null</li>
+          <li>그렇지않으면 값1 리턴</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h1 id="transaction">Transaction</h1>
+
+<p>트랜잭션 :  데이터베이스의 상태를 변화시키는 일종의 작업 단위를 의미</p>
+
+<ul>
+  <li>start transaction : commit, rollback이 나올 때까지 실행되는 모든 SQL</li>
+  <li>commit : commit 나올 때까지 실행된 SQL을 파일 시스템에 저장</li>
+  <li>rollback : start transaction 실행 전 , commit 전 상태로 되돌림</li>
+</ul>
+
+:ET

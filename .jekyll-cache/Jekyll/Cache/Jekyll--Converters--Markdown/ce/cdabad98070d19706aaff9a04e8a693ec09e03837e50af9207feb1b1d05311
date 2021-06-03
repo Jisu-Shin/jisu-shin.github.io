@@ -1,0 +1,188 @@
+I"�"<h2 id="스케줄링">스케줄링</h2>
+
+<ul>
+  <li>CPU가 어느 프로세스를 먼저 처리하도록 할 것인가 결정하는 것</li>
+  <li>목적
+    <ul>
+      <li>자원 할당의 공정성</li>
+      <li>단위시간당 처리량 극대화</li>
+      <li>오버헤드,응답시간,반환시간,대기시간 최소화</li>
+      <li>자원 사용의 균형 유지</li>
+    </ul>
+  </li>
+  <li>스케줄링의 대상 : ready queue에 들어온 프로세스</li>
+  <li><strong>스케줄링의 기법</strong></li>
+  <li>선점 기법 (preemptive) : 프로세스가 CPU를 점유하고 있는 동안 I/O ( <code class="language-plaintext highlighter-rouge">메모리에서 읽기, 쓰기</code> )나 인터럽트가 발생한 것도 아니고 모든 작업을 끝내지도 않았는데 다른 프로세스가 해당 CPU를 <strong>강제로 점유할 수 있다</strong>. 즉, 프로세스가 정상적으로 수행중인 가운데 다른 프로세스가 CPU를 강제로 점유하여 실행할 수 있는 것이다
+    <ul>
+      <li>비선점 기법 (nonpreemptive) : 한 프로세스가 <strong>한 번 CPU를 점유</strong>했다면 , I/O나 인터럽트 발생 또는 프로세스 종료가 될 때까지 <strong>다른 프로세스가 CPU를 점유하지 못하는 것</strong>이다.</li>
+    </ul>
+  </li>
+  <li>스케줄링 척도
+    <ol>
+      <li>CPU 활용도</li>
+      <li>처리량</li>
+      <li><strong>소요(반환) 시간</strong> : 작업이 메모리에 들어가기 까지 걸린 시간, 준비 큐에 머무르는 시간, 실행시간, 입출력 시간 등 <strong>작업을 완료하는데 소요된 시간</strong></li>
+      <li><strong>대기 시간</strong> : 프로세스가 실행 되기 전까지 대기되는 시간</li>
+      <li>응답(반응) 시간 :  작업을 요청한 시간부터 반응을 시작하는 시간까지의 간격</li>
+    </ol>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<hr />
+
+<h2 id="fsfc-스케줄링-first-come-first-serve-">FSFC 스케줄링 (First Come First Serve )</h2>
+
+<p><img src="https://user-images.githubusercontent.com/34755287/53879667-5d666b80-4052-11e9-8cd4-066aefcf3047.png" alt="img" /></p>
+
+<ul>
+  <li>비선점형 스케줄링</li>
+  <li>CPU를 먼저 요청한 프로세스가 먼저 CPU를 배정 받는 스케쥴링 방법이다</li>
+  <li>FIFO 큐를 사용하여 간단하게 구현 가능하다</li>
+  <li>호위효과 (Convoy Effect) : 앞선 프로세스가 수행하는 동안 나머지 프로세스들이 그만큼 오래 기다리는 것이 단점이다 (평균대기시간이 길어진다)</li>
+  <li><strong>평균 반환시간</strong> = (6+14+21+24) / 4 = 16.25 (동시에 도착했음)</li>
+  <li><strong>평균 대기시간</strong> = (0+6+14+21)/4 = 10.25</li>
+</ul>
+
+<p><br /></p>
+
+<hr />
+
+<h2 id="sjf-스케줄링-shortest-job-first">SJF 스케줄링 (Shortest-Job-First)</h2>
+
+<p><img src="https://user-images.githubusercontent.com/34755287/53879666-5d666b80-4052-11e9-93c2-86b725588403.png" /></p>
+
+<ul>
+  <li>비선점형 스케줄링</li>
+  <li>가장 짧게 수행되는 프로세스가 먼저 CPU를 배정 받는 스케쥴링 방법이다</li>
+  <li>현실적인 컴퓨터 환경에서 프로세스의 CPU 점유 시간을 알 수 없기에 매우 비현실적이다</li>
+  <li><strong>평균 반환시간</strong> =  (3+9+16+24) / 4 = 13 (동시에 도착했음)</li>
+  <li><strong>평균 대기시간</strong> = (0+3+9+16)/4 = 7</li>
+</ul>
+
+<p><br /></p>
+
+<hr />
+
+<h2 id="srtf-shortest-remaining-time-first">SRTF (Shortest-Remaining Time First)</h2>
+
+<p><img src="/images/srtf.jpg" /></p>
+
+<p>0초 P1(6)</p>
+
+<p>1초 P1(5) P2(8)</p>
+
+<p>2초 P1(4) P2(8) P3(7) =&gt; P1(4) P3(7) P2(8)</p>
+
+<p>3초 P1(3) P3(7) P2(8) P4(3) =&gt; P1(3) P4(3) P3(7) P2(8)</p>
+
+<p>4초 P1(2) P4(3) P3(7) P2(8)</p>
+
+<ul>
+  <li>SJF의 선점형 방식이다</li>
+  <li>먼저 온 프로세스가 CPU를 할당받고 있더라도 남은 처리 시간이 뒤에 온 프로세스의 처리 시간 보다 길면 CPU를 빼앗긴다</li>
+  <li>평균 대기시간이 가장 짧은 알고리즘이다</li>
+  <li>잦은 문맥교환이 일어나고 그에 따른 오버헤드가 커진다 , 기아현상 ( <code class="language-plaintext highlighter-rouge">원하는 자원을 계속 할당받지 못하는 상태 : 시간이 긴 프로세스는 영원히 CPU를 할당 받을 수 없다.</code>  ) 이 더 심각하게 발생할 수 있다</li>
+  <li><strong>평균 반환시간</strong> =  P1(6-0) P4(9-3) P3(16-2) P2(24-1) »»&gt;  (6+6+14+23) / 4 = 12.25</li>
+  <li><strong>평균 대기시간</strong> = (0+3+7+15) / 4 = 6.25</li>
+</ul>
+
+<p>p4는 3초 기다림 (6-3)  ///  p3는 7초 기다림 (9-2)  ///  p2는 15초 기다림(16-1)</p>
+
+<p><br /></p>
+
+<hr />
+
+<h2 id="hrn-스케줄링-high-response-ratio-next">HRN 스케줄링 (High Response Ratio Next)</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">프로세스</th>
+      <th style="text-align: center">처리시간</th>
+      <th style="text-align: center">대기시간</th>
+      <th style="text-align: center">우선순위</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">P4</td>
+      <td style="text-align: center">3</td>
+      <td style="text-align: center">5</td>
+      <td style="text-align: center">(3+5) / 3 = 2.6</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">P1</td>
+      <td style="text-align: center">6</td>
+      <td style="text-align: center">5</td>
+      <td style="text-align: center">(6+5) / 6 = 1.8</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">P3</td>
+      <td style="text-align: center">7</td>
+      <td style="text-align: center">5</td>
+      <td style="text-align: center">(7+5) / 7 = 1.7</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">P2</td>
+      <td style="text-align: center">8</td>
+      <td style="text-align: center">5</td>
+      <td style="text-align: center">(8+5) / 8 = 1.6</td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li>비선점 스케줄링</li>
+  <li>SJF의 단점 (<code class="language-plaintext highlighter-rouge">실행시간이 긴 프로세스와 짧은 프로세스의 지나친 불평등</code> ) 을 개선한 기법, 각 작업의 우선순위로 CPU 할당 해주는 스케줄링</li>
+  <li>CPU를 할당받기 위해 기다렸던 대기시간 또한 스케줄링 하는데 고려할 점으로 사용한다</li>
+  <li>우선순위 = (대기시간+실행시간) / 실행시간</li>
+</ul>
+
+<hr />
+
+<h2 id="우선순위-스케줄링-priority">우선순위 스케줄링 (Priority)</h2>
+
+<ul>
+  <li>선점 스케줄링 &amp; 비선점 스케줄링</li>
+  <li>우선순위가 높은(<code class="language-plaintext highlighter-rouge">작은 정수 값</code>) 프로세스가 먼저 선택된다</li>
+  <li>문제점 -기아(Starvation) : 우선순위가 낮아 아무리 오래 기다려도 CPU 할당을 못받는 것이다</li>
+  <li>해결방법 - 노화 (aging) : ready queue에서 기다리는 동안 일정 시간이 지나면 우선순위를 일정량 높여주는 것이다</li>
+</ul>
+
+<hr />
+
+<h2 id="라운드-로빈-스케줄링round-robin">라운드 로빈 스케줄링(Round-Robin)</h2>
+
+<p><img src="/images/rr.png" width="73%" /></p>
+
+<ul>
+  <li>선점 스케줄링</li>
+  <li>시분할 시스템 ( <code class="language-plaintext highlighter-rouge">같은 시간을 여러개로 쪼개어 병행작업을 할 때 사용하는 시스템</code>)을 위해 설계됐다</li>
+  <li>시간 할당(Time quantum)만큼 수행을 한 프로세스는 큐의 마지막으로 들어가 재할당을 기다린다</li>
+  <li>ready queue는 원형 queue이다</li>
+  <li>컴퓨터 자원을 사용할 수 있는 기회를 프로세스에게 공정하게 부여하는 스케줄링 알고리즘이다</li>
+  <li>시간 할당량이 크면 FCFS와 비슷해지고, 작아질수록 문맥교환의 오버헤드가 커지게 되서 효율이 떨어진다</li>
+  <li>평균대기시간 P1 (0+9) P2 (3+9+3) P3(6+9+2) P4(9) ===&gt; (9+15+17+9) / 4 = 12.5</li>
+</ul>
+
+<p><b> 현재 우리의 운영체제는 Priority + RR 형태로 스케줄링 되어 있다 </b></p>
+
+<hr />
+
+<h2 id="프로세스의-5가지-상태">프로세스의 5가지 상태</h2>
+
+<p><img src="https://t1.daumcdn.net/cfile/tistory/27033450580366160E" /></p>
+
+<ul>
+  <li>생성 (Create) : 프로세스가 생성되는 중이다</li>
+  <li>실행 (Running) : 프로세스가 CPU를 차지하여 명령어들이 실행되고 있다</li>
+  <li>준비 (Ready) : 프로세스가 CPU를 사용하고 있지 않지만 언제든지 사용할 수 있는 상태로 CPU가 할당되기를 기다리고 있다</li>
+  <li>대기 (Waiting): 프로세스가 입출력 완료, 시그널 수신 등 어떤 사건을 기다리고 있는 상태를 말한다</li>
+  <li>종료 (Terminated) : 프로세스의 실행이 종료되었다</li>
+</ul>
+
+<hr />
+
+:ET

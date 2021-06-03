@@ -1,0 +1,21 @@
+---
+layout: post
+title: "[JAVA] SWEA_9229 | 한빈이와 Spot Mart"
+image: swea2.jpg
+date: 2021-02-08 
+tags: [swea]
+categories: algorithm
+---
+
+# 문제
+
+- [SWEA 9229 - 한빈이와 Spot Mart](https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AW8Wj7cqbY0DFAXN&categoryId=AW8Wj7cqbY0DFAXN&categoryType=CODE&problemTitle=9229&orderBy=FIRST_REG_DATETIME&selectCodeLang=ALL&select-1=&pageSize=10&pageIndex=1)
+- 문제의 저작권은 SW Expert Academy에 있습니다
+- 해결방법 : 조합을 이용해 문제를 풀 수 있었다
+
+------
+
+
+# 나의코드
+
+<script src="https://gist.github.com/Jisu-Shin/60d1b7638daf41af36f6e46a0871bf3c.js"></script>

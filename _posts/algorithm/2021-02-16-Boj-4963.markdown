@@ -1,0 +1,19 @@
+---
+layout: post
+title: "[JAVA] Boj_4963 | 섬의 개수"
+image: boj4963.png
+date: 2021-02-16 
+tags: [boj]
+categories: algorithm
+---
+
+# 문제
+- [Boj 4963 - 섬의 개수 ](https://www.acmicpc.net/problem/4963)
+- 해결방법 : 8방향 설정과 dfs코드를 제대로 짰으면 쉽게 무난하게 풀 수 있는 문제다
+
+
+---
+
+# 나의 풀이
+
+<script src="https://gist.github.com/Jisu-Shin/0e57593b1a1be5cd5d8c8a7d6d752e6a.js"></script>

@@ -1,0 +1,139 @@
+I"�<h2 id="프로세스와-쓰레드의-차이">프로세스와 쓰레드의 차이</h2>
+
+<p>운영체제는 시스템 자원을 효율적으로 관리하기 위해서 스레드를 사용한다</p>
+
+<ul>
+  <li>
+    <p>프로그램</p>
+
+    <ul>
+      <li>아직 실행하기 전 파일 , 정적인 상태 (클릭을 하지 않았다)</li>
+      <li>예시 ::  은행 (영업전 / 영업중) (?)  // 크레이지 아케이드 게임 그 자체</li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="https://media.vlpt.us/images/raejoonee/post/b7939911-f3e8-48ac-abb8-63d8a17d0444/103.png" width="80%" /></p>
+
+<ul>
+  <li>프로세스
+    <ul>
+      <li>컴퓨터에서 연속적으로 실행되고 있는 컴퓨터 프로그램, 동적인 상태</li>
+      <li>메모리에 올라와 실행되고 있는 프로그램의 인스턴스(독립적인 개체)</li>
+      <li><strong><u>운영체제</u>로부터 시스템 자원을 할당받는 작업의 단위</strong></li>
+      <li>운영체제 입장에서의 최소 작업 단위</li>
+      <li>code, data, stack, heap 형식으로 메모리 영역을 OS로부터 할당 받는다</li>
+      <li><strong>하나의 프로세스는 하나 이상의 스레드를 가질 수 있다</strong> (멀티 스레드)</li>
+      <li>예시 :: ATM(1) , ATM(2) , ATM(3)  // 물풍선에 맞는 프로세스, 남은 게임시간을 알려주는 프로세스, 물풍선이 블록을 깨는 프로세스</li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="https://media.vlpt.us/images/raejoonee/post/b91490ed-c67b-407d-8fea-a8d6fdb22559/104.png" /></p>
+
+<ul>
+  <li>
+    <p>쓰레드</p>
+
+    <ul>
+      <li><strong><u>프로세스</u>가 할당받은 자원을 이용하는 실행흐름의 단위</strong></li>
+      <li>CPU 입장에서의 최소 작업 단위</li>
+      <li>프로세스 내에서 각각 stack만 할당받고 code, data,heap 영역은 공유한다</li>
+      <li>예시 :: 입금, 출금, 계좌확인, 송금 // 물풍선에 맞는 프로세스일 경우 (물안에 갇힘, 물안에 갇히는 시간계산,물풍선이 터지는 것)</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="프로세스쓰레드-동기화">프로세스(쓰레드) 동기화</h2>
+
+<ul>
+  <li>병행 프로세스 :  CPU는 하나의 프로세스만 처리할 수 있는데 여러 프로세스들이 동시에 존재하며 실행 상태에 있는 것이다</li>
+  <li>프로세스 동기화란 여러 프로세스가 <strong>공유하는 자원의 일관성</strong>을 유지하는 것이다</li>
+  <li>발생할 수 있는 문제 예시
+    <ul>
+      <li>계좌에 입금과 출금을 하려는데 입금,출금 쓰레드에 시간지연만 줘도 <strong>공통변수에 대한 동시 업데이트</strong>로 인해 변수값이 수행될 때마다 다르게 출력된다</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="임계구역critical-section">임계구역(Critical section)</h2>
+
+<ul>
+  <li>여러 개의 쓰레드가 수행되는 시스템( <code class="language-plaintext highlighter-rouge">멀티 쓰레드</code> )에서 각 쓰레드들이 <strong>공유하는 데이터 (변수, 테이블, 파일 등)을 변경하는(접근하는) 코드 영역</strong>이다</li>
+  <li>임계구역 문제를 해결하기 위해서 3가지 조건을 충족시켜야한다
+    <ol>
+      <li><strong>상호배제 (Mutual Exclusion)</strong> : <strong>오직 한 쓰레드만 진입 가능하다.</strong> 한 쓰레드가 임계구역에서 수행 중인 상태에서는 다른 쓰레드는 절대 이 구역에 접근 할 수 없다 ( 입금 or 출금 하나만 접근 가능)</li>
+      <li>진행 (Progress) :  임계 구역에 실행되고 있는 프로세스가 없을 경우, 들어갈 프로세스를 적절히 선택해줘야 한다.</li>
+      <li>한정된 대기 (Bounded wating) : 프로세스의 기아를 방지하기 위해, 한 번 임계 구역에서 실행된 프로세스는 <strong>다음 실행에 대한 제한</strong>을 두어야한다. (입금이 됐으면 출금이 될 수 있게끔)</li>
+    </ol>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="동기화-기법">동기화 기법</h2>
+
+<ul>
+  <li>상호배제의 형태</li>
+  <li>임계구역에 접근하는 다른 프로세스를 프로세스 하나가 접근하지 못하게 실행을 제어하는 방법</li>
+</ul>
+
+<p><br /></p>
+
+<h4 id="뮤텍스">뮤텍스</h4>
+
+<p><img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;fname=http%3A%2F%2Fcfile30.uf.tistory.com%2Fimage%2F9949BC485A30D9132E8296" /></p>
+
+<ul>
+  <li>임계구역에 들어가기 전에 Lock을 획득하고  (<code class="language-plaintext highlighter-rouge">acquire()</code>) , 나올 때는 Lock을 반환해야 한다 (<code class="language-plaintext highlighter-rouge">release()</code>)</li>
+  <li>이진 세마포어 기법( 0과 1만 사용 ), Locking 기법으로 불린다</li>
+</ul>
+
+<p><br /></p>
+
+<h4 id="세마포어">세마포어</h4>
+
+<p><img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;fname=http%3A%2F%2Fcfile27.uf.tistory.com%2Fimage%2F99131C395A30DB5107DB0C" /> <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;fname=http%3A%2F%2Fcfile8.uf.tistory.com%2Fimage%2F99E23B4B5A30DB3903CCBE" /></p>
+
+<ul>
+  <li>카운팅 세마포어 : 공유자원의 개수가 한정되었을 때 이 자원에 접근하는걸 컨트롤 하는데 사용된다. 세마포어는 사용가능한 자원의 개수로 초기화된다.</li>
+  <li>wait() : 사용하고있으면 -1, 세마포어가 0보다 작다면 , 이미 제한된 수의 프로세스가 임계구역에 접근하고 있는 상태이므로 세마포어가 0 보다 커질 때까지 임계구역에 접근하는 다른 프로세스들은 대기</li>
+  <li>signal() : 임계구역의 작업을 끝내고 lock반납</li>
+</ul>
+
+<hr />
+
+<h2 id="교착상태">교착상태</h2>
+
+<ul>
+  <li>상호 배제에 의해 나타는 문제점으로, 둘 이상의 프로세스들이 자원을 점유한 상태에서 서로 다른 프로세스가 점유하고 있는 자원을 요구하며 <strong>무한정 기다리는 현상</strong>이다</li>
+  <li>교착상태에 빠지는 조건
+    <ol>
+      <li>상호배제 (Mutual exclusion) : 한 자원에 대하여 여러 프로세스가 사용할 수 없다</li>
+      <li>점유하고 대기 (Hold and wait) : 자원을 가지고 있는 프로세스가 다른 프로세스에 의해 사용중인 자원을 점유하기 위해 기다리는 것</li>
+      <li>비선점 (No preemption) : 다른 프로세스가 사용중인 자원을 뺏을 수 없다</li>
+      <li>순환대기 (Circular wait) : 공유자원과 자원을 사용하기 위해 대기하는 프로세스들이 원형으로 구성된다. 즉 자신에게 할당된 자원을 점유하면서 다른 프로세스가 사용중인 자원을 점유하려 한다</li>
+    </ol>
+  </li>
+  <li>교착상태 해결방법
+    <ol>
+      <li>예방
+        <ul>
+          <li>상호배제 해결 : 여러 프로세스가 공유 자원을 동시에 사용할 수 있게 한다.</li>
+          <li>점유 및 대기 해결 : 프로세스 시작시 사용해야 할 모든 자원을 할당해 준다.</li>
+          <li>비선점 해결 : 자원을 점유하고 있는 프로세스가 다른 자원을 요구할 때 점유하고 있는 자원을 반납하고, 요구한 자원을 사용하기 위해 기다리게 한다. 즉 선점형으로 변경한다.</li>
+          <li>환형 대기 해결 : 자원에 고유한 번호를 할당하고, 번호 순서대로 자원을 요구하도록 한다.</li>
+        </ul>
+      </li>
+      <li>회피</li>
+      <li>탐지 &amp; 회복</li>
+    </ol>
+  </li>
+</ul>
+
+<hr />
+:ET

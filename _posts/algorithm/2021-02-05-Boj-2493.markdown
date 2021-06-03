@@ -1,0 +1,18 @@
+---
+layout: post
+title: "[JAVA] Boj_2493 | 탑"
+image: boj2493.png
+date: 2021-02-05
+tags: [boj]
+categories: algorithm
+---
+
+# 문제
+- [Boj 2493 - 탑 ](https://www.acmicpc.net/problem/2493)
+- 해결방법 : stack의 top, peek()를 활용해야 풀어야하는 문제이다 
+
+- - -
+
+# 나의 풀이
+
+<script src="https://gist.github.com/Jisu-Shin/fa34f0718b97f69c346af841d0145099.js"></script>

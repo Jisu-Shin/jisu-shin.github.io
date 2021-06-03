@@ -1,0 +1,13 @@
+I"<h1 id="문제">문제</h1>
+<ul>
+  <li><a href="https://www.acmicpc.net/problem/2564" target="_black">[Boj 2564- 경비원]</a></li>
+  <li>해결방법 : math.abs()때문에 고생한 문제, 처음에 접근은 잘해서 내가 설계한 방식대로 문제를 풀 수 있었다 , 얼마나 떨어져있는지를 x,y값으로 전처리한다면 쉽게 풀 수 있는 문제이다</li>
+</ul>
+
+<hr />
+
+<h1 id="나의-풀이">나의 풀이</h1>
+
+<script src="https://gist.github.com/Jisu-Shin/54fea2839ca8d47ab779ebb22ced8278.js"></script>
+
+:ET

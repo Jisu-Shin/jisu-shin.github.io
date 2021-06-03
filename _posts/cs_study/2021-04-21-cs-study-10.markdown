@@ -1,0 +1,64 @@
+---
+layout: post
+title: cs-study-10 | 보안(dhcp)
+image: cs5.jpg
+date: 2021-04-21
+tags: [cs]
+categories: cs
+---
+
+
+
+## DHCP (Dynamic Host Configuration Protocol) 
+
+- 조직의 네트워크의 호스트에게 동적으로 IP주소를 할당하는 프로토콜
+
+
+
+
+
+
+## DHCP 통신흐름
+  <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2F0Ds2Q%2FbtqB3qgXXuQ%2FhLCfegRBjUQfiEsdbCPLdk%2Fimg.png">
+
+  
+
+
+
+
+## DHCP 관련 공격 방법
+
+> DHCP Spoofing(`구조적 결함을 이용해 시스템 권한을 획득한 뒤, 정보를 빼가는 해킹 수법`) Attack 
+
+- 공격자가 가짜 DHCP서버 역할을 수행하면서 Client에게 게이트웨이 주소나 DNS서버주소 등을 자신의 IP로 알려주어 공격
+- 클라이언트가 외부와 통신하는 모든 트래픽을 자신의 게이트웨이 , 즉 공격자에게 전송하기 때문에 MITM공격으로 패킷을 스니핑(`네트워크상에서 자신이 아닌 다른 상대들의 패킷교환을 훔쳐보는 행위`)하거나 변조하는 것이 가능하다
+  - MITM(Man In The Middle): 중간자 공격, 네트워크 통신을 조작하여 통신 내용을 도청하거나 조작하는 공격기법
+
+> 예방법 (DHCP Snooping)
+
+- DHCP 서버를 보호하기 위해 사용하는 기능으로 , DHCP Spoofing을 방어하기 위해 스위치가 DHCP 메시지의 내부까지 확인하는 기능이다
+- Snooping -> `스니핑과 비슷, 네트워크 상에 떠도는 중요한 정보를 몰래 탈취`
+- DHCP Snooping 설정시 switch의 포트를 trusted포트 (`server가 연결된 신뢰 포트`) 와 untrusted 포트 (`end device가 연결된 비 신뢰 포트`) 로 구분한다
+- switch는 수신한 discover 메시지를 trust 포트로 전송, untrust 포트에 연결된 공격자는 수신이 불가능하다
+- swtich(L3) 에서 정상적인 DHCP 서버가 연결된 포트를 제외한 나머지 포트에서 필터링 기능을 사용하여 DHCP Offer, Ack 메시지(서버가 클라이언트한테 보내는 메시지, 클라이언트 입장에서는 받는 메시지)는 차단한다
+- 단 DHCP Discover, Request 메시지는 DHCP서버에 전송되어야 하므로 차단하면 안된다
+
+<br>
+<br>
+<br>
+
+> DHCP Starvation Attack (할당 가능한 IP주소 모두 받아가기)
+
+- 공격자가 자신의 MAC주소를 변조하여 DHCP서버가 보유하고 있는 모든 IP주소를 할당받는 공격
+- 공격이 성공할 수 있는 이유는 DHCP 서버의 경우 Client가 전송하는 DHCP Discover안에 있는 'Client MAC Address'를 보고 서로 다른 장비라고 판단하기 때문이다
+- 정상적인 클라이언트들은 IP주소를 할당 받지 못한다
+- 서버가 정상적인 서비스를 하지 못하게 한다는 점에서 DOS 공격으로 볼 수 있다
+
+> 예방법 (Port Security)
+
+- Port security 기능을 사용하여 특정 스위치 포트로 지정된 MAC주소만 접속을 허용하고 일치하지 않는 MAC주소의 장비가 연결될 경우 해당 포트를 shutdown하는 기술이다
+- Port security는 정적으로 설정된 Switchport에서만 사용이 가능하다
+
+
+
+

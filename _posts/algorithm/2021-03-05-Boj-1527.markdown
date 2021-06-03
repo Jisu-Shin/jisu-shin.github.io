@@ -1,0 +1,20 @@
+---
+layout: post
+title: "[JAVA] Boj 1527 | 금민수의 개수"
+image: boj1527.png
+date: 2021-03-05
+tags: [boj]
+categories: algorithm
+---
+
+# 문제
+- <a href="https://www.acmicpc.net/problem/1527" target="_black" >[Boj 1527 - 금민수의 개수]</a>
+
+- 해결방법 : dfs를 사용하면 쉽게 풀 수 있는 문제이다. 처음에 문제를 잘 못 읽어서 엄청 헤맸던 문제 ㅠㅠ 하지만 dfs 기초 문제 ...ㅎㅎ num*10 + 4 이 수식이 중요하다고 생각한다
+
+  
+
+# 나의 풀이
+
+<script src="https://gist.github.com/Jisu-Shin/c7b65f33224f4254439301ad0cc8f2fa.js"></script>
+

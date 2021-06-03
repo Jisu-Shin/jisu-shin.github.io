@@ -1,0 +1,6 @@
+I"�<h1 id="문제">문제</h1>
+<ul>
+  <li><a href="https://www.acmicpc.net/problem/2493">Boj 2493 - 탑 </a></li>
+  <li>해결방법 : stack의 top, peek()를 활용해야 풀어야하는 문제이다</li>
+</ul>
+:ET

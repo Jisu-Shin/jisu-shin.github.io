@@ -1,0 +1,19 @@
+---
+layout: post
+title: "[JAVA] Boj_16953 | A → B"
+image: boj16953.png
+date: 2021-02-25
+tags: [boj]
+categories: algorithm
+---
+
+# 문제
+- [Boj 16953 - A → B ](https://www.acmicpc.net/problem/16953)
+- 해결방법 : BFS로 푸는 것보다 A ← B로 가는 방법이 더 간단하다 그래서 그리디 알고리즘인가보다 BFS로 풀면 Long으로 선언해줘야하지만 그리디로 풀면 int로도 가능하다 생각을 다양하게 하고 싶다
+
+
+- - -
+
+# 나의 풀이
+
+<script src="https://gist.github.com/Jisu-Shin/ab5ca247d0c36908bd9d78c7e329db99.js"></script>

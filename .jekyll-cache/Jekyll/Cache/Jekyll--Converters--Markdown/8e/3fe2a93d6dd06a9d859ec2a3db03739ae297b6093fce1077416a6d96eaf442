@@ -1,0 +1,32 @@
+I"<h2 id="틀린-문제-포스팅하면서-내가-잘못-알고-있는-부분-포스팅하기">틀린 문제 포스팅하면서 내가 잘못 알고 있는 부분 포스팅하기</h2>
+
+<ul>
+  <li>localStorage
+    <ul>
+      <li>데이터 저장시 key(문자열) : value(문자열) 방식으로 저장한다</li>
+      <li>모바일에서 사용이 가능하다</li>
+    </ul>
+  </li>
+  <li>외부 css 파일을 참조하려고 할 때 사용하는 속성명 : <strong>href</strong>
+    <ul>
+      <li>href와 src의 차이점 알아보기</li>
+    </ul>
+  </li>
+  <li>
+    <p>이미지의 위치를 가져올 때 : src</p>
+  </li>
+  <li>display : inline-block
+    <ul>
+      <li>한줄에 같이 출력되고 넓이와 높이를 먹게 하는거</li>
+      <li>inline만 하면 넓이와 높이가 안먹는다</li>
+    </ul>
+  </li>
+  <li>console.log (100 === “100” ) // false
+    <ul>
+      <li>= 이 3개나 있으므로 값과 타입도 같아야한다</li>
+      <li>= 이 2개가 있으면 값만 같으면 된다</li>
+    </ul>
+  </li>
+</ul>
+
+:ET

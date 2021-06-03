@@ -1,0 +1,26 @@
+/* ===============
+	TYPOGRAPHY
+=============== */
+
+// Body font
+$base-font-size: 15px;
+$base-font-style: normal;
+$base-font-variant: normal;
+$base-font-weight: normal;
+$base-font-family: 'RIDIBatang';
+// 'Open Sans', Helvetica Neue, Helvetica, Arial, sans-serif;
+$base-line-height: 33px;
+
+
+// Headings
+$heading-font-weight: 400;
+$heading-font-family: 'RIDIBatang';
+
+// 'Volkhov', 'Times New Roman', Times, serif;
+
+@font-face {
+    font-family: 'RIDIBatang';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/RIDIBatang.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}

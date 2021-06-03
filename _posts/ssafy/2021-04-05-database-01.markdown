@@ -1,0 +1,166 @@
+---
+layout: post
+title: database-01
+image: cs4.jpg
+date: 2021-04-06
+tags: [ssafy]
+categories: ssafy
+---
+
+
+
+
+
+# RDBMS
+
+- 관계형 데이터베이스 시스템
+
+
+
+# SQL
+
+- 열의 대소문자는 구분하지 않음
+- 하지만 **데이터**의 대소문자는 구분
+
+
+
+| DCL (Data Control Language) | DDL (Data Definition Language) |     DML (Data Manipulation Language)      |
+| :-------------------------: | :----------------------------: | :---------------------------------------: |
+|            grant            |             create             |                insert (C)                 |
+|           revoke            |             alter              |                select (R)                 |
+|                             |              drop              |                update (U)                 |
+|                             |             rename             |                 delete(D)                 |
+|                             |                                |  <a href="#transaction">[TCL]</a> commit  |
+|                             |                                | <a href="#transaction">[TCL]</a> rollback |
+
+
+
+### DDL
+
+{% highlight markdown %}
+create database 데이터베이스명
+default character set 값 collate 값; 
+
+create table 테이블이름 (
+    열이름 type [option attributes],
+    열이름2 type ,
+    .
+    .
+);
+
+alter database 데이터베이스명
+default character set 값 collate 값; 
+
+drop database 데이터베이스명;
+
+use 데이터베이스명;
+
+{% endhighlight %}
+
+
+
+- Character set은 각 문자가 컴퓨터에 저장될 때 어떠한 '코드'로 저장될지에 대한 규칙의 집합을 의미한다
+
+  - utf8mb3 : 다국어 처리
+  - utf8mb4 : 이모지 문자까지 처리
+
+
+- Collate은 특정 문자 셋에 의해 데이터베이스에 저장된 값들을 비교 검색하거나 정렬 등의 작업을 위해 문자들을 서로 ' 비교 ' 할 때 사용하는 규칙들의 집합을 의미한다
+
+
+- option attributes
+  - not null
+  - default 값
+  - unsigned
+  - auto increment : 새 레코드가 추가 될 때마다 값을 자동으로 1 추가시킴
+  - primary key
+
+
+
+---
+
+### DML
+
+{% highlight markdown %}
+
+insert into 테이블명
+values (열데이터1, 열데이터2, 열데이터3, 열데이터4);
+
+insert into 테이블명 (열이름1, 열이름2)
+values (열데이터1, 열데이터2);
+
+update 테이블명
+set 열1 = 열데이터1 , 열2 = 열데이터2
+where 조건;
+
+delete from 테이블명
+where 조건;
+
+select * | { ALL | DISTINCT } 열
+from 테이블명;
+
+{% endhighlight %}
+
+
+
+- insert할 때 생략이 가능한 field
+  1. null이 허용된 열
+  2. default가 설정된 열
+  3. auto increment가 설정된 열
+  
+  
+
+
+- update or delete 시 where절을 생략하면 모든 데이터가 바뀌거나 or 삭제된다
+
+
+
+
+- select 절 함수
+  - ifnull(열이름,0)
+  - case when 열이름 > 조건 then '고액'
+         when 열이름 > 조건 then '평균'
+         else '저액'
+    end '연봉등급'  
+
+  
+  
+- Function(내장함수) 
+  
+  
+  - NOW() , SYSDATE() , CURRENT_TIMESTAMP : 현재 날짜와 시간 리턴
+  
+  | format \| Description         | format \| Description             | format \| Description              |
+  | ----------------------------- | --------------------------------- | ---------------------------------- |
+  | %Y \| 2020                    | %a \| Sun, .. , Sat               | %k  `(시간)`\| 0,1,2, ... , 22, 23 |
+  | %y \| 20                      | %W \| Sunday, ... , Saturday      | %l `(시간)` \| 0,1, ... , 11,12    |
+  | %b \| Jan, ... , Dec          | %w \| 0,1, .. ,6                  | %i `(분)`  \| 00 ... 59            |
+  | %M \| January, ... , December | %p \| AM or PM                    | %S `(초)` \| 00 ... 59             |
+  | %m \| 01,02 ... , 12          | %H `(시간)` \| 01,02 ... , 22,23  | %s `(초)` \| 00 ...59              |
+  | %d \| 01, 02 ... , 30 , 31    | %h `(시간)` \| 01,02, ... , 11,12 | %T `(시간, 24시간)` \| hh:mm:ss              |
+  | %e \| 0, 1, 2, ... , 30, 31   | %I `(시간)` \| 01,02, ... , 11,12 | %j `(1년중 x일)` \| 001 , ... , 365             |
+  
+  - if (논리식, 값1, 값2)
+  - ifnull (값1, 값2)
+    - 값1 = null 이면 값2
+    - null이 아니면 값1
+  - nullif (값1, 값2) :
+    - 값1 = 값2 이 true 이면 null
+    - 그렇지않으면 값1 리턴
+
+
+
+---
+
+
+
+# Transaction 
+
+트랜잭션 :  데이터베이스의 상태를 변화시키는 일종의 작업 단위를 의미
+
+- start transaction : commit, rollback이 나올 때까지 실행되는 모든 SQL
+- commit : commit 나올 때까지 실행된 SQL을 파일 시스템에 저장
+- rollback : start transaction 실행 전 , commit 전 상태로 되돌림
+
+
+

@@ -1,0 +1,36 @@
+I"R<h2 id="feb-week1">Feb, week1</h2>
+
+<p><a href="https://velog.io/@jeus95/CS%EC%8A%A4%ED%84%B0%EB%94%941" target="_black"> 정렬 </a></p>
+
+<h2 id="feb-week2-자료구조-array-list-queue-stack-heap-tree-hash">Feb, week2	자료구조	array, list, queue, stack, heap, tree, hash</h2>
+
+<p><a href="https://velog.io/@jeus95/CS%EC%8A%A4%ED%84%B0%EB%94%94-2">BFS, DFS , DP , 다익스트라 , 플로이드 와샬, 크루스칼 알고리즘 특징과 코드구현 </a></p>
+
+<h2 id="feb-week3-컴퓨터구조1-cpu-cache-파이프라이닝-해저드--시스템-버스-메모리">Feb, week3	컴퓨터구조1	CPU, cache, 파이프라이닝, 해저드 , 시스템 버스, 메모리</h2>
+
+<p><a href="https://hyewon-study-log.tistory.com/99?category=976039">메모리관리-페이징,세그멘테이션</a></p>
+
+<h2 id="feb-week4-운영체제1-스케쥴링-캐시-인터럽트-멀티프로세스-멀티코어-멀티쓰레드">Feb, week4	운영체제1	스케쥴링 캐시 인터럽트 멀티프로세스 멀티코어 멀티쓰레드</h2>
+
+<p><a href="https://velog.io/@jeus95/CS%EC%8A%A4%ED%84%B0%EB%94%94-3">멀티 쓰레드</a></p>
+
+<h2 id="mar-week2-운영체제2-동기화-뮤텍스-세마포-교착상태-병행-상호배제">Mar, week2	운영체제2	동기화 (뮤텍스 세마포 교착상태) 병행 상호배제</h2>
+<h2 id="mar-week4-운영체제3-세그멘테이션-페이지교체-가상화-디스크스케쥴링">Mar, week4	운영체제3	세그멘테이션 페이지교체 가상화 디스크스케쥴링</h2>
+<h2 id="mar-week5-네트워크1-tcpip프로토콜-3-handshaking과-4-handshaking--클래스와-서브넷-마스크-http-프로토콜">Mar, week5	네트워크1	TCP/IP프로토콜 ,3-Handshaking과 4-Handshaking , 클래스와 서브넷 마스크 ,http 프로토콜</h2>
+<p><a href="https://velog.io/@jeus95/cs%EC%8A%A4%ED%84%B0%EB%94%94-6">TCP/IP 프로토콜</a></p>
+
+<h2 id="apr-week1-네트워크2--허브리피터브릿지스위치라우터-arp-와-rarp--ospf와-rip-흐름혼잡제어">Apr, week1	네트워크2	: 허브&amp;리피터&amp;브릿지&amp;스위치&amp;라우터, ARP 와 RARP , OSPF와 RIP ,흐름&amp;혼잡제어</h2>
+<p><a href="https://hyewon-study-log.tistory.com/99?category=976039" target="_black"> [허브&amp;리피터&amp;브릿지&amp;스위치&amp;라우터] </a></p>
+
+<blockquote>
+  <p>스위치는 ‘같은 네트워크 내부’ 에서 데이터 전송을 수행 (103동 아파트까지 왔어 여기서 너희집 호수는 어디야?) 
+<br /> 라우터는 ‘네트워크 사이’에 데이터 전송을 수행 (103동에서 201동으로 보내줘)
+<a href="https://server-engineer.tistory.com/582">스위치&amp; 라우터 더 참고하기</a></p>
+</blockquote>
+
+<h2 id="apr-week2-네트워트3-csma--dhcp-네트워크-토폴로지-이더넷전이중-반이중">Apr, week2	네트워트3	csma , dhcp, 네트워크 토폴로지, 이더넷(전이중 반이중)</h2>
+
+<p><a href="https://velog.io/@jeus95/CS-%EC%8A%A4%ED%84%B0%EB%94%94-7">네트워크 토폴로지</a></p>
+
+<h2 id="apr-week3-보안-대칭키공개키해쉬함수블록체인">Apr, week3	보안	대칭키,공개키,해쉬함수,블록체인</h2>
+:ET

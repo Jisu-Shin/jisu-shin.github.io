@@ -1,0 +1,18 @@
+---
+layout: post
+title: "[JAVA] Boj_2206 | 벽 부수고 이동하기"
+image: boj2206.png
+date: 2021-03-16
+tags: [boj]
+categories: algorithm
+---
+
+# 문제
+- <a href="https://www.acmicpc.net/problem/2206" target="_black" >[Boj 2206- 벽 부수고 이동하기]</a>
+- 해결방법 : 3차원 배열을 쓰는게 중요하다 왜냐하면 벽을 깰 수 있는 제한 횟수도 체크해야하기 때문이다 bfs접근까지는 알았지만 3차원 배열 쓰는거에서 시간을 많이 잡아 먹은걸로 기억하는 알고리즘 문제
+
+- - -
+
+# 나의 풀이
+
+<script src="https://gist.github.com/Jisu-Shin/f7e6caf9334de350012e1fdd043e56e8.js"></script>

@@ -1,0 +1,86 @@
+I"�
+<h1 id="jsp-java-server-page">JSP (Java Server Page)</h1>
+
+<ul>
+  <li>Servlet의 단점을 해결하기 위해 사용한다
+    <ul>
+      <li>java in HTML</li>
+    </ul>
+  </li>
+  <li>JSP가 내부적으로 WAS에 의해서 Servlet으로 변환되어서 실행됨
+    <ul>
+      <li>최초 jsp요청시에만 servlet변환 작업이 이뤄진다 // 속도차이는 크게 없다</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="jsp-스크립팅-요소-선언">JSP 스크립팅 요소 선언</h3>
+
+<ol>
+  <li>선언 ::  &lt;%! 멤버(전역?)변수와 method 선언  %&gt;</li>
+  <li>처리문 , 서비스 메소드에 해당하는 영역 , request &amp; response 작업 ::  &lt;% java code %&gt;</li>
+  <li>출력문 :: &lt;%= 문자열 %&gt; == &lt;% out.println(문자열);  %&gt;</li>
+  <li>주석 :: &lt;%– –%&gt;
+    <ul>
+      <li>소스보기 할 때 보이지가 않는다 // html은 주석처리해도 보임</li>
+      <li>서블릿을 변환될 때 포함을 시키지 말아라</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="jsp-지시문">JSP 지시문</h3>
+
+<ol>
+  <li>Page Directive : 현재 JSP 페이지를 어떻게 처리할지 정보를 제공한다
+    <ul>
+      <li>&lt;% @ page atr1=”val1”  %&gt;</li>
+      <li>페이지 맨위에 이클립스가 자동으로 코딩이 되어있다</li>
+      <li>white space 중요, 속성과 속성사이는 띄어쓰기 해줘야한다</li>
+      <li>session의 기본값은 true :: 사용자인증처리, login</li>
+    </ul>
+  </li>
+  <li>include Directive</li>
+</ol>
+
+<ul>
+  <li></li>
+  <li>session의 기본값은 true
+    <ul>
+      <li>사용자 인증 처리 할 때 사용</li>
+    </ul>
+  </li>
+  <li>디버깅이 어렵다는 단점이 있다</li>
+  <li>비즈니스 로직과 프리젠테이션의 분리가 가능하다는 장점이 있다</li>
+</ul>
+
+<h3 id="jsp-기본객체">JSP 기본객체</h3>
+
+<p><strong>데이터를 담고있는 바구니같은 역할</strong></p>
+
+<p>–&gt; .setAttribute() , .getAttribute() , .removeAttribute() 공통메소드</p>
+
+<p>👇 아래로 내려갈 수록 범위가 점점 커진다</p>
+
+<ul>
+  <li><strong>pageContext</strong>
+    <ul>
+      <li>현재 page 객체에서만 사용한다</li>
+    </ul>
+  </li>
+  <li><strong>request</strong> : 요청은 단 한번만 / 일회성
+    <ul>
+      <li>.setAttribute(“o”,obj)</li>
+      <li>.getAttribute(“o”)</li>
+    </ul>
+  </li>
+  <li><strong>session</strong>  : 공통적으로 쓸 수 있다 // session = true인 페이지에서만</li>
+  <li>application : 모든 프로젝트에서 사용할 수 있다 // 제약사항이 없다 // 프로젝트 바깥으로 나갈 수 없다</li>
+</ul>
+
+<p>서블릿일 경우 httpsession을 만들어야한다</p>
+
+<p>jsp는 미리 만들어 놨다 , 내장 객체</p>
+
+<hr />
+
+:ET

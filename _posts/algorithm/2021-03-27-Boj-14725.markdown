@@ -1,0 +1,18 @@
+---
+layout: post
+title: "[JAVA] Boj_14725 | 개미굴"
+image: boj14725.png
+date: 2021-03-27
+tags: [boj]
+categories: algorithm
+---
+
+# 문제
+- <a href="https://www.acmicpc.net/problem/14725" target="_black" >[Boj 14725- 개미굴]</a>
+- 해결방법 : node 객체를 새로 만들어줬다 이때 link의 타입을 ArrayList로 줘야했다 여기서 헷갈려서 시간을 많이 걸렸다 addData의 로직을 잘 짜야한다 ㅋㅋㅋㅋ 코드를 다 짜고 난 후 나중에 확인해보니 주석이 없어서 내가 짠 로직인데 이해하는데 시간이 걸렸다 Node 문제에서 좀 깐깐해진 버전? 머리를 써야하는 문제이다
+
+- - -
+
+# 나의 풀이
+
+<script src="https://gist.github.com/Jisu-Shin/9010a16ee648a474189ee973db43d062.js"></script>

@@ -1,0 +1,18 @@
+---
+layout: post
+title: "[JAVA] Boj 5639 | 이진 검색 트리"
+image: boj5639.png
+date: 2021-02-18
+tags: [boj]
+categories: algorithm
+---
+
+# 문제
+- <a href="https://www.acmicpc.net/problem/5639" target="_black" >[Boj 5639 - 이진 검색 트리]</a>
+- 해결방법 : 구글링으로 푼 문제였나.. 내가 처음 시도한 방법과 다르게 쉽게 풀 수 있는 방법이 있는 문제였다 . 이진 검색 트리의 특징을 알면 배열과 재귀로 풀 수 있는 문제다. 루트보다 작은게 왼쪽 자식 노드에 가고 클 경우 오른쪽 노드를 간다는 특징을 잡는게 키포인트다 나머지는 재귀로 하면 문제를 풀 수 있다
+
+- - -
+
+# 나의 풀이
+
+<script src="https://gist.github.com/Jisu-Shin/177c9ba0a787f9ee1370f5955fc94d57.js"></script>

@@ -1,0 +1,82 @@
+I"�
+<h2 id="aggregation-function">aggregation function</h2>
+
+<ul>
+  <li>sum(), avg(), count(), max(), min
+    <ul>
+      <li>null이 있을 경우 제외하고 계산을 한다</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="group-by">group by</h2>
+
+<ul>
+  <li>Database는 선택 목록의 집계함수를 각 행 그룹에 적용하고 각 그룹에 대해 <strong>단일 결과 행</strong>을 반환한다</li>
+  <li>이상한 값을 출력하지만 에러가 발생하지 않으므로 setting을 해줘야한다 =&gt; ONLY_FULL_GROUP_BY</li>
+  <li>select절에 있는 <strong>일반열</strong>은 group by절에 있어야 정상적으로 동작한다
+    <ul>
+      <li>일반 열말고 그냥 sum(salary) 이런거랑 where절 해서 조건에 해당하는 카운트는 셀 수 있다</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="set-operator">SET Operator</h2>
+
+<ul>
+  <li>여러 테이블의 행을 연결
+    <ul>
+      <li>참고 : join은 여러 테이블의 열을 연결</li>
+    </ul>
+  </li>
+  <li>select절에 있는 column의 개수와 type이 일치해야 한다</li>
+</ul>
+
+<h2 id="모델링">모델링</h2>
+
+<ol>
+  <li>개념적 데이터베이스 모델링
+    <ul>
+      <li>Enity 를 추출 (예시 회원)</li>
+      <li>속성 구성 (예시 아이디, 비밀번호,email)</li>
+      <li>관계 분석
+        <ul>
+          <li>두 entity간의 업무적인 연관성 또는 관련 사실</li>
+          <li>관계차수,</li>
+          <li>선택성 : 선택적인지 반드시인지를 표시</li>
+        </ul>
+      </li>
+      <li>Entity간의 관계를 정의해서 ER-Diagram 정의</li>
+    </ul>
+  </li>
+  <li>논리적 데이터베이스 모델링
+    <ul>
+      <li>ER-Diagram을 Mapping Rule을 적용하여 스키마 설계</li>
+      <li>기본키, 참조키</li>
+      <li>단순 엔티티 =&gt; 테이블</li>
+      <li>속성 =&gt; 컬럼</li>
+      <li>식별자 =&gt; 기본키</li>
+      <li>관계 =&gt; 참조키, 테이블</li>
+      <li>정규화
+        <ul>
+          <li>데이터의 중복을 제거하고 속성들을 본래의 제자리에 위치 시키는 것</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>물리적 데이터베이스 모델링
+    <ul>
+      <li>데이터베이스 스키마를 좀 더 효율적으로 구현하기 위한 작업</li>
+      <li>DBMS 특성에 맞게 실제 데이터베이스내의 개체들을 정의하는 단계</li>
+    </ul>
+    <ul>
+      <li>데이터 타입 지정
+        - 역정규화</li>
+      <li>시스템 성능을 고려하여 기존 설계를 재구성하는 것</li>
+      <li>매번 조인을 해야되서 시스템의 성능저하를 가져오는 경우</li>
+    </ul>
+  </li>
+  <li></li>
+</ol>
+
+:ET

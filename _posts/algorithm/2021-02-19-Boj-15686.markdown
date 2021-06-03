@@ -1,0 +1,18 @@
+---
+layout: post
+title: "[JAVA] Boj_15686 | 치킨 배달"
+image: boj15686.png
+date: 2021-02-19
+tags: [boj]
+categories: algorithm
+---
+
+# 문제
+- <a href="https://www.acmicpc.net/problem/15686" target="_black" >[Boj 15686- 치킨 배달]</a>
+- 해결방법 : 조합을 사용한다면 쉽게 풀 수 있는 문제 , np랑 그냥 comb랑 같이 풀었는데 np는 5가지의 경우가 다 나오므로 여기에는 그냥 comb를 쓰는게 더 좋다
+
+- - -
+
+# 나의 풀이
+
+<script src="https://gist.github.com/Jisu-Shin/11407d99b569305203edfa8881fcee14.js"></script>

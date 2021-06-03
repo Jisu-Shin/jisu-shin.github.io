@@ -1,0 +1,18 @@
+---
+layout: post
+title: "[JAVA] Boj 5567 | 결혼식"
+image: boj5567.png
+date: 2021-02-18
+tags: [boj]
+categories: algorithm
+---
+
+# 문제
+- <a href="https://www.acmicpc.net/problem/5567" target="_black" >[Boj 5567 - 결혼식 ]</a>
+- 해결방법 : bfs로 푸는 문제 . 그래프 구조와 bfs를 제대로 이해했다면 빠르게 풀 수 있는 문제였다 
+
+- - -
+
+# 나의 풀이
+
+<script src="https://gist.github.com/Jisu-Shin/a1a48e7da835ef073a71d658dc8b8182.js"></script>

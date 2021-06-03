@@ -1,0 +1,88 @@
+I"�<h1 id="servlet">Servlet</h1>
+
+<ul>
+  <li>웹에서 돌아가는 JAVA이다</li>
+  <li>자바를 사용하여 웹페이지를 <strong>동적</strong>으로 생성하는 서버측 프로그램이다</li>
+  <li>HTML in Java ( 확장자가 <strong>java</strong>  )</li>
+  <li>한 줄 씩 out.println(‘’&lt;html&gt;’) 하기 귀찮음</li>
+</ul>
+
+<h3 id="web-architecture">Web Architecture</h3>
+
+<ol>
+  <li>Client가 Web Browser 에게 <strong>Data발생한다</strong> // 넘어가는 Data가 Parameter이다</li>
+  <li>Client가 Server한테 <strong>요청(Request)</strong>한다</li>
+  <li><strong>Web server( =http서버) : Client 접속처리</strong> // html,css,js만 처리 가능</li>
+  <li><u>DB Server와 Web Serer를 **연결**하기 위해</u> 중간에 <strong>Application Server가 필요</strong>
+    <ul>
+      <li>Application Server =&gt; <code class="language-plaintext highlighter-rouge">web에서 사용할 수 있는</code> java사용 =&gt; Server Side program (web이 들어가서 // <code class="language-plaintext highlighter-rouge">web+java</code>)
+        <ul>
+          <li>Presentation (화면에다 보이는 역할) -&gt; 5번 동작</li>
+          <li>Business Logic (DB logic)</li>
+          <li>Persistence Logic (DB logic)</li>
+        </ul>
+      </li>
+      <li>톰캣 = Web Server + <u>Application Server</u> (<code class="language-plaintext highlighter-rouge">톰캣을 설치한 이유</code>)</li>
+      <li>Application Server —-(jdbc프로토콜)—- RDBMS</li>
+    </ul>
+  </li>
+  <li>Server가 Client로 응답(Response)한다</li>
+</ol>
+
+<ul>
+  <li>web.xml : <code class="language-plaintext highlighter-rouge">배치설명서</code>
+    <ul>
+      <li>서버한테 내가 만든 프로젝트는 ~~한 서블릿이 있어, 서블릿의 이름은 ~~ 라고 설정</li>
+      <li>많은 Servlet (주가 되는건지, 부가적인건지) 을 구분할 수 있는 설명 파일이다</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="web-page-이동">web page 이동</h3>
+
+<ol>
+  <li>
+    <p>url 직접입력</p>
+  </li>
+  <li>
+    <p>link ( ex:기사제목누르기… )</p>
+  </li>
+  <li>
+    <p>form</p>
+
+    <ul>
+      <li>GET방식 : 여기 위까지는 다 get방식</li>
+    </ul>
+  </li>
+</ol>
+
+<hr />
+
+<ul>
+  <li>
+    <p>POST방식 (=&gt; 직접 명시할 때만 )</p>
+  </li>
+  <li>Servlet은 서버에서 돌아간다 서버에서 html에서 만든걸 client에 넘겨줘야한다 =&gt; IO (이클립스 콘솔처럼)</li>
+  <li>톰캣은 한글 전용이 아니다 / html 로 한글을 넣으면 ? 가 나온다</li>
+  <li>전세계에 제공할 서비스므로 charset=utf-8</li>
+</ul>
+
+<h3 id="servlet-역할">Servlet 역할</h3>
+
+<ol>
+  <li>data get - 데이터를 얻어오기</li>
+  <li>Logic - 데이터를 가지고 일처리 하기 (알맞는 로직에 따라)</li>
+  <li>response page - 결과로 응답 페이지 만들기 (html로 만들기)</li>
+</ol>
+
+<ul>
+  <li>생성자, init() , destroy() 는 최초 한번만 실행</li>
+  <li>doGet(), doPost() 클라이언트가 호출할 때마다 실행</li>
+  <li>Servlet객체 한명에 Client 여러명</li>
+  <li>Thread는 WAS가 알아서 처리해줘서 여러 Client가 요청해도 크게 신경쓸 필요 없다</li>
+  <li>네이버는 .nhn  // .do 는 만드는 사람 마음</li>
+</ul>
+
+<hr />
+
+:ET

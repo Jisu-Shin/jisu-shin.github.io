@@ -1,0 +1,18 @@
+---
+layout: post
+title: "[JAVA] Boj_3040 | 백설 공주와 일곱 난쟁이"
+image: boj3040.png
+date: 2021-02-15
+tags: [boj]
+categories: algorithm
+---
+
+# 문제
+- [Boj 3040 - 백설 공주와 일곱 난쟁이 ](https://www.acmicpc.net/problem/3040)
+- 해결방법 : 조합을 사용해서 문제를 풀 수 있다
+
+- - -
+
+# 나의 풀이
+
+<script src="https://gist.github.com/Jisu-Shin/1d0a54c019c49a70b0b2ccffabddfbd4.js"></script>

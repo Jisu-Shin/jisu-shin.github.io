@@ -1,0 +1,18 @@
+---
+layout: post
+title: "[JAVA] Boj_2839 | 설탕 배달"
+image: boj2839.png
+date: 2021-02-16
+tags: [boj]
+categories: algorithm
+---
+
+# 문제
+- <a href="https://www.acmicpc.net/problem/2839" target="_black" >[Boj 2839- 설탕 배달 ]</a>
+- 해결방법 : 가장 큰 범위부터 생각한다음 작은 순서대로 생각하는게 포인트 !!!!! 쉬운 문제인데 매번 볼 때마다 접근법을 어떻게 해야하는지 당황한다
+
+- - -
+
+# 나의 풀이
+
+<script src="https://gist.github.com/Jisu-Shin/653cb00e8d3b0c382a364d6915fd256a.js"></script>

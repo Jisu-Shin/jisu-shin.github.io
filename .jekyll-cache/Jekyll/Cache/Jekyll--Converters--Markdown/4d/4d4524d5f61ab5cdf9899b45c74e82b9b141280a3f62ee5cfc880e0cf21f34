@@ -1,0 +1,13 @@
+I"p<h1 id="문제">문제</h1>
+<ul>
+  <li><a href="https://www.acmicpc.net/problem/14889" target="_black">[Boj 14889- 스타트와 링크]</a></li>
+  <li>해결방법 : 여기서 np를 사용한 조합과 그냥 comb를 사용해서 문제를 풀었어야했다! 그래도 그냥 comb로도 boolean형으로 문제를 풀긴했다 계속 틀렸습니다 떠서 왜그러지 했는데 2명씩 조합 처리를 또 해줘야 했다 ..^^ 조합 문제 재밌게 풀었다</li>
+</ul>
+
+<hr />
+
+<h1 id="나의-풀이">나의 풀이</h1>
+
+<script src="https://gist.github.com/Jisu-Shin/96b7a9e286d22afdd826baaa7ebf1b27.js"></script>
+
+:ET

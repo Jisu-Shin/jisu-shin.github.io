@@ -1,0 +1,20 @@
+---
+layout: post
+title: "[JAVA] Boj 1759 | 암호 만들기"
+image: boj1759.png
+date: 2021-03-12
+tags: [boj]
+categories: algorithm
+---
+
+# 문제
+- <a href="https://www.acmicpc.net/problem/1759" target="_black" >[Boj 1759 - 암호 만들기]</a>
+- 해결방법 : 조합으로 풀 수 있는 문제. 여기서 키포인트는 문제를 꼼꼼히 잘 읽어야하는데 최소 한 개의 모음과 최소 두개의 자음으로 구성되게 만들어줘야한다는 것이다 . 나는 거기서 시간을 많이 잡아 먹었다 그 부분만 바로 체크해준다면 빨리 문제를 풀 수 있다고 생각한다 
+
+<br>
+
+
+# 나의 풀이
+
+<script src="https://gist.github.com/Jisu-Shin/2bc1d20c45a36590f6debee2dd9462a7.js"></script>
+

@@ -1,0 +1,18 @@
+---
+layout: post
+title: "[JAVA] Boj_1158 | 요세푸스 문제"
+image: boj1158.png
+date: 2021-02-09
+tags: [boj]
+categories: algorithm
+---
+
+# 문제
+- [Boj 1158 - 요세푸스 문제 ](https://www.acmicpc.net/problem/1158)
+- 해결방법 : Queue 자료구조를 사용하면 빨리 풀 수 있는 문제 , cnt변수로 카운팅해주고 k번째 일 때 초기화를 꼭 해줘야한다 
+
+- - -
+
+# 나의 풀이
+
+<script src="https://gist.github.com/Jisu-Shin/86923ce884ba2ad5108dedca4280fbde.js"></script>

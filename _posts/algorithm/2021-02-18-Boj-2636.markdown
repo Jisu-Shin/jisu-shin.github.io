@@ -1,0 +1,18 @@
+---
+layout: post
+title: "[JAVA] Boj 2636 | 치즈"
+image: boj2636.png
+date: 2021-02-18
+tags: [boj]
+categories: algorithm
+---
+
+# 문제
+- <a href="https://www.acmicpc.net/problem/2636" target="_black" >[Boj 2636 - 치즈 ]</a>
+- 해결방법 : bfs로 푸는 문제 , 문제를 보고 어떻게 bfs를 생각해내지? , 구글링해서 풀 수 있던 문제다 , 공기일경우 큐에 넣고 치즈일경우 녹여주면 된다
+
+- - -
+
+# 나의 풀이
+
+<script src="https://gist.github.com/Jisu-Shin/d93d1f3083d44f7788c9b10ff802cad3.js"></script>
