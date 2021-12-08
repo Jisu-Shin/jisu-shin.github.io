@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "[JAVA] LeetCode | Two Sum"
-image: swea3.png
+image: swea3.jpg
 date: 2021-12-07
 tags: [leetcode]
 categories: algorithm
