@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "[JAVA] LeetCode | Interger_To_Roman"
-image: swea4.jpg
+title: "[JAVA] LeetCode | Integer_To_Roman"
+image: swea5.jpg
 date: 2021-12-13
 tags: [leetcode]
 categories: algorithm
